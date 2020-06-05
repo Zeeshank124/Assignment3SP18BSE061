@@ -113,9 +113,9 @@ public class AI_FSM : MonoBehaviour {
         }
         
     }
-    public IEnumerator EnemyAttack()
-    {
-        print("Attacking enemy");
+    public IEnumerator EnemyAttack () {
+
+		 print("Attacking enemy");
         while (currentState == ENEMY_STATES.attack)
         {
             agent.isStopped = false;
@@ -126,7 +126,7 @@ public class AI_FSM : MonoBehaviour {
             }
             if (agent.remainingDistance > agent.stoppingDistance)
             {
-                print("Distance zayada ho gya");
+                print("Distance increased");
                 CurrentState = ENEMY_STATES.patrol;
                 yield break;
             }
@@ -134,13 +134,18 @@ public class AI_FSM : MonoBehaviour {
             {
                 // Do something
                 playerHealth.HealthPoints -= maxDamage ;
+
+				CurrentState = ENEMY_STATES.patrol;
+
                 if(playerHealth.HealthPoints==0)
-                yield break;
+				{
+					
+					yield break;
+				}
                 print("loop ending");
             }
         }
         yield return null;
-       
     }
 
     // Update is called once per frame

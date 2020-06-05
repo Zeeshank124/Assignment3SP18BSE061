@@ -3854,7 +3854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304df429acf8e2d44a39190fd36a529b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 10
+  maxDamage: 5
   currentState: 0
 --- !u!4 &856819251 stripped
 Transform:
